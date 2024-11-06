@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def one_product
     @product = Product.first
-    render template: "product/show"
+    render template: "products/show"
   end
 
   def all_products
