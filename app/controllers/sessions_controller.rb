@@ -8,4 +8,9 @@ class SessionsController < ApplicationController
       render json: {}, status: :unauthorized
     end
   end
+
+  def destroy
+    cookies.delete(:user_id)
+    render json: { message: "Logged out successfully" }
+  end
 end

@@ -9,4 +9,9 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal ["email", "user_id"], data.keys
   end
+
+  test "destroy" do
+    delete "/sessions.json"
+    assert_response 200
+  end
 end
