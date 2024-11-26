@@ -1,4 +1,12 @@
 class SessionsController < ApplicationController
+  def index
+    puts "HERE IS THE CURRENT USER"
+    pp current_user
+
+    @products = Product.all
+    render :index
+  end
+
   def create
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
